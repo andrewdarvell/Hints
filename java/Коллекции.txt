@@ -1,0 +1,103 @@
+Массивы
+	
+	// создает пустой массив на 5 элементов: 
+	int[] integers = new int[5];
+	
+	// создает массив из 5 элементов со значениями: 
+	int[] integers = new int[] { 1, 2, 3, 4, 5 };
+	
+	int[] integers = new int[5];
+	for (int aa = 0; aa < integers.length; aa++) {
+	integers[aa] = aa;
+	}
+	
+	В языке Java массивы начинаются с нулевой позиции. 
+	
+	
+Списки
+	Список представляет собой коллекцию, которая по определению упорядочена, 
+	то есть является последовательностью. Так как список упорядочен, можно полностью 
+	управлять тем, куда помещаются его элементы. Коллекция Java List может содержать только 
+	объекты и строго регламентирует их поведение.
+	
+	List – это интерфейс, так что его экземпляр нельзя создать напрямую. Обычно работают с его реализацией ArrayList:
+		List<Object> listOfObjects = new ArrayList<Object>();
+		List<Person> listOfPersons = new ArrayList<Person>();
+		List<Integer> listOfIntegers = new ArrayList<Integer>();
+		
+	Метод add() добавляет элемент в конец списка.
+	Чтобы узнать длину списка, нужно вызвать метод size()
+	Чтобы извлечь элемент из списка, нужно вызвать метод get() и передадть ему индекс требуемого элемента:
+	
+		List<Integer> listOfIntegers = new ArrayList<Integer>();
+		listOfIntegers.add(Integer.valueOf(238));
+		Logger l = Logger.getLogger("Test");
+		l.info("Item at index 0 is: " listOfIntegers.get(0));
+		
+	Перебор элементов списка
+		List<Integer> listOfIntegers = obtainSomehow();
+		Logger l = Logger.getLogger("Test");
+		for (Integer i : listOfIntegers) {
+		  l.info("Integer value is : " + i);
+		}
+
+		List<Integer> listOfIntegers = obtainSomehow();
+		Logger l = Logger.getLogger("Test");
+		for (int aa = 0; aa < listOfIntegers.size(); aa++) {
+		  Integer I = listOfIntegers.get(aa);
+		  l.info("Integer value is : " + i);
+		}
+		
+Наборы
+	Набор (Set) – это коллекция, которая, по определению, содержит уникальные элементы – без дубликатов. 
+	Если список может содержать одни и те же объекты сотни раз, то набор может содержать данный объект только один раз. 
+	Коллекция Java Set может содержать только объекты и строго регламентирует их поведение.
+	
+	Так как Set является интерфейсом, нельзя создать его экземпляр непосредственно, и я покажу вам один из моих любимых 
+	способов его реализации: HashSet. HashSet прост в использовании и напоминает List.
+	Вот некоторые из вещей, которые можно делать с набором:
+			поместить что-то в набор;
+			спросить, насколько велик набор в данный момент;
+			извлечь что-то из набора.
+			
+	Отличительной особенностью набора является то, что он гарантирует уникальность своих элементов, но не заботится о 
+	порядке их расположения.
+	
+	
+		Set<Integer> setOfIntegers = new HashSet<Integer>();
+		setOfIntegers.add(Integer.valueOf(10));
+		setOfIntegers.add(Integer.valueOf(11));
+		setOfIntegers.add(Integer.valueOf(10));
+		for (Integer i : setOfIntegers) {
+		  l.info("Integer value is: " + i);
+		}
+	Можно было бы ожидать, что набор Set состоит из трех элементов, но на самом деле в нем только два элемента, потому 
+	что объект Integer со значением 10 будет добавлен только один раз.	
+
+Отображения	
+	Отображение (Map) – это удобная коллекция, которая позволяет связать один объект (ключ), с другим (значение). 
+	Естественно, ключ отображения должен быть уникальным, и он используется для последующего извлечения значений. 
+	Коллекция Java Map может содержать только объекты и строго регламентирует их поведение.
+	
+	Так как Map является интерфейсом, нельзя создать его экземпляр непосредственно, и я покажу вам один из моих 
+	любимых способов его реализации: HashMap.
+	Вот некоторые операции, которые можно проводить с отображениями:
+			поместить что-то в отображение;
+			извлечь что-то из отображения;
+			получить набор ключей отображения – для его перебора.
+			
+		public Map<String, Integer> createMapOfIntegers() {
+		  Map<String, Integer> mapOfIntegers = new HashMap<String, Integer>();
+		  mapOfIntegers.put("1", Integer.valueOf(1));
+		  mapOfIntegers.put("2", Integer.valueOf(2));
+		  mapOfIntegers.put("3", Integer.valueOf(3));
+		  // . . .
+		  mapOfIntegers.put("168", Integer.valueOf(168));
+		}
+	
+		Set<String> keys = mapOfIntegers.keySet();
+		Logger l = Logger.getLogger("Test");
+		for (String key : keys) {
+		  Integer value = mapOfIntegers.get(key);
+		  l.info("Value keyed by '" + key + "' is '" + value + "'");
+		}
