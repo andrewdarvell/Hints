@@ -1,0 +1,4 @@
+
+Указываем libraryPath
+
+  java -Djava.library.path=c:\chilkatJava TestApp
