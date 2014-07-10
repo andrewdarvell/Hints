@@ -83,4 +83,8 @@
 	
 Перемещение файла 
 	git mv hello.html lib
+	
+Ветка мастер
+
+	git checkout master
 
