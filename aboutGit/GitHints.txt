@@ -88,3 +88,5 @@
 
 	git checkout master
 
+Сохранение паролей для гита:
+git config credential.helper store
