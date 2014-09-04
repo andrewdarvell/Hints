@@ -90,3 +90,10 @@
 
 Сохранение паролей для гита:
 git config credential.helper store
+
+
+https://raw.githubusercontent.com/chmyaf/chmf/dev/.gitignore
+# Временные файлы kate с настроенными префиксами и постфиксами
+.~*~
+# Среда разработки Idea/PhpStorm
+.idea
